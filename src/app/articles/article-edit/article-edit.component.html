@@ -1,0 +1,4 @@
+<h1>Edit </h1>
+
+<app-loader *ngIf="loading"></app-loader>
+<app-article-form *ngIf="!loading" [article]="articleViewService.article"></app-article-form>

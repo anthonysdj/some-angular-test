@@ -1,0 +1,18 @@
+<div class="main-container">
+    <nav *ngIf="authService.isLoggedIn()">
+        <ul>
+            <li>
+                <a routerLink="/" title="article list">Home</a>
+            </li>
+            <li>
+                <a routerLink="/article/create" title="add new article">New Article</a>
+            </li>
+            <li class="user">
+                {{ 'Hello ' + user?.name }}
+            </li>
+        </ul>
+    </nav>
+
+
+    <router-outlet></router-outlet>
+</div>

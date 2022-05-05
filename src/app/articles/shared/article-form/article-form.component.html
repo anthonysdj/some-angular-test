@@ -1,0 +1,34 @@
+<div class="form-wrapper">
+    <form [formGroup]="createArticleForm" (ngSubmit)="article ? updateArticle() : createArticle()">
+        <fieldSet [disabled]="loading$.getValue()">
+            <label for="title">Title</label>
+            <input id="title" type="text" formControlName="title" [value]="article?.title">
+            <app-field-error
+                field="title"
+                [form]="createArticleForm"
+                message="Title is required."
+            ></app-field-error>
+        </fieldSet>
+        
+        <fieldset [disabled]="loading$.getValue()">
+            <label for="body">Body</label>
+            <textarea id="body" cols="30" rows="10" formControlName="body">
+                {{ article?.body }}
+            </textarea>
+            <app-field-error
+                field="body"
+                [form]="createArticleForm"
+                message="Body is required."
+            ></app-field-error>
+        </fieldset>
+
+        <button type="submit" [disabled]="loading$.getValue()">
+            <div *ngIf="loading$.getValue(); else elseBlock">
+                <app-loader></app-loader>
+            </div>
+            <ng-template #elseBlock>
+                {{ article ? 'Update article' : 'Add article'}}
+            </ng-template>
+        </button>
+    </form>
+</div>

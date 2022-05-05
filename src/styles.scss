@@ -1,0 +1,91 @@
+/* You can add global styles to this file, and also import other style files */
+
+$primaryColor: #0084FF;
+
+body {
+    background-color: #e7e7e7;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-wrapper {
+    background-color: #FFF;
+    box-shadow: 0 0 2px #959595;
+    border-radius: 12px;
+    max-width: 500px;
+    padding: 35px;
+    margin: 50px auto;
+}
+
+input:-webkit-autofill{
+    -webkit-background-clip: text;
+}
+
+form {
+    fieldset {
+        border: 0;
+        margin-bottom: 15px;
+        padding: 0;
+    }
+
+    label {
+        display: block;
+        font-size: 20px;
+    }
+
+    input,
+    textarea,
+    select {
+        background-color: #FFF;
+        border: 1px solid #e7e7e7;
+        border-radius: 12px;
+        padding: 15px;
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 20px;
+
+        :focus {
+            border: 1px solid $primaryColor;
+        }
+    }
+
+    button {
+        border-radius: 18px;
+        background-color: $primaryColor;
+        font-size: 30px;
+        padding: 15px 20px;
+        border: 0;
+        color: #FFF;
+        width: 100%;
+        display: block;
+        margin-top: 30px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #2294ff;
+    }
+}
+
+.form-group {
+    display: flex;
+
+    input {
+        border-radius: 12px 0 0 12px;
+    }
+
+    select {
+        border-radius: 0 12px 12px 0;
+        width: 100%;
+        max-width: 200px;        
+    }
+}
+
+.alert {
+    &.alert-danger {
+        p {
+            color: rgb(255, 65, 65);
+        }
+    }
+}

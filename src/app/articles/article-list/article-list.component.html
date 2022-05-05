@@ -1,0 +1,10 @@
+<h1>Articles</h1>
+
+<app-article-search></app-article-search>
+
+<div class="articles">
+    <article *ngFor="let article of articles">
+        <p>{{ article.title }}</p>
+        <a [routerLink]="['/article', article.id]">Read more...</a>
+    </article>
+</div>

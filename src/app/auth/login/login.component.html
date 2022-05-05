@@ -1,0 +1,31 @@
+<div class="form-wrapper">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <fieldset [disabled]="loading$.getValue()">
+            <label for="email">Email</label>
+            <input id="email" type="email" formControlName="email">
+            <app-field-error
+                field="email"
+                [form]="loginForm"
+                message="Email is required."
+            ></app-field-error>
+        </fieldset>
+        <fieldset [disabled]="loading$.getValue()">
+            <label for="password">Password</label>
+            <input id="password" type="password" formControlName="password">
+            <app-field-error
+                field="password"
+                [form]="loginForm"
+                message="Password is required."
+            ></app-field-error>
+        </fieldset>
+
+        <button [disabled]="loading$.getValue()">
+            <div *ngIf="loading$.getValue(); else elseBlock">
+                <app-loader></app-loader>
+            </div>
+            <ng-template #elseBlock>
+                Login
+            </ng-template>
+        </button>
+    </form>
+</div>

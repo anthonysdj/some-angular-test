@@ -1,0 +1,9 @@
+<form [formGroup]="searchForm">
+    <div class="form-group">
+        <input formControlName="searchInput" (keyup)="search()" type="text" placeholder="Search by: id, user id, title">
+
+        <select formControlName="searchFilter">
+            <option *ngFor="let filter of searchFilters" [value]="filter.key">{{ filter.label }}</option>
+        </select>
+    </div>
+</form>

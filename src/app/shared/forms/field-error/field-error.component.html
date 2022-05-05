@@ -1,0 +1,5 @@
+<div *ngIf="form && form.get(field)!.invalid && (form.get(field)!.dirty || form.get(field)!.touched)" class="alert alert-danger">
+    <p *ngIf="form.get(field)!.errors?.['required']">
+        {{ message }}
+    </p>
+</div>

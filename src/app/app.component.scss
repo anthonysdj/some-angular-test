@@ -1,0 +1,29 @@
+nav {
+    background-color: #999;
+    padding: 0 20px;
+    margin-bottom: 15px;
+
+    ul {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        padding: 20px 0;
+        list-style: none;
+        
+        li {
+            margin-right: 15px;
+
+            a {
+                color: #FFF;
+                text-decoration: none;
+            }
+            
+            &.user {
+                background-color: #333;
+                color: #FFF;
+                margin-left: auto;
+                padding: 10px;
+            }
+        }
+    }
+}

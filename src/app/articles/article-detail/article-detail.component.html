@@ -1,0 +1,6 @@
+<app-loader *ngIf="loading"></app-loader>
+<div *ngIf="articleViewService.article && !loading">
+    <a [routerLink]="['/article/edit/', articleViewService.article.id]">Edit this article</a>
+    <h1>{{ articleViewService.article.title }}</h1>
+    <p>{{ articleViewService.article.body }}</p>
+</div>
